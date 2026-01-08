@@ -1,0 +1,312 @@
+/* ==========================================================================
+   1. CONFIGURATION GÉNÉRALE & TYPO
+   ========================================================================== */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0a0a0a; 
+    color: #e0e0e0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. NAVIGATION (HEADER PLUS MINCE)
+   ========================================================================== */
+header {
+    background-color: rgba(10, 10, 10, 0.95);
+    padding: 10px 5%; /* Padding réduit pour un menu plus mince */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #d4af37;
+    backdrop-filter: blur(15px);
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.navigation ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.85rem; /* Taille de police légèrement réduite */
+    transition: 0.4s ease;
+}
+
+.navigation ul li a:hover {
+    color: #d4af37;
+}
+
+/* ==========================================================================
+   3. SECTION HERO (ACCUEIL)
+   ========================================================================== */
+#Hero.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-image: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%), url('images/lebanon-header.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #d4af37; 
+    text-shadow: 0px 10px 40px rgba(0,0,0,0.9);
+}
+
+.download-btn-hero {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #d4af37 0%, #f9e29c 100%);
+    color: #000 !important;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+/* ==========================================================================
+   4. SECTION REGIONS (CARTES PLUS PETITES)
+   ========================================================================== */
+.regions-section {
+    padding: 80px 5%;
+    background-color: #0a0a0a;
+    text-align: center;
+}
+
+.regions-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #d4af37;
+}
+
+.regions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px; /* Espace réduit */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.region-card {
+    position: relative;
+    height: 300px; /* Hauteur réduite de 400px à 300px */
+    border-radius: 8px;
+    overflow: hidden;
+    display: block;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: 0.5s ease;
+}
+
+.region-card:hover {
+    border-color: #d4af37;
+    transform: translateY(-5px);
+}
+
+.region-card img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: 0.8s ease;
+}
+
+.region-card:hover img { 
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    z-index: 1;
+}
+
+.region-name {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    z-index: 2;
+    width: 100%;
+}
+
+/* ==========================================================================
+   5. SECTION ACTIVITÉS
+   ========================================================================== */
+.activites-section {
+    padding: 80px 5%;
+    background-color: #0f0f0f;
+    text-align: center;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+}
+
+.category-card {
+    background: #181818;
+    padding: 40px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.5s;
+}
+
+.category-card:hover {
+    border-color: #d4af37;
+    transform: translateY(-10px);
+}
+
+.category-card .icon { 
+    font-size: 3.5rem; 
+    margin-bottom: 20px;
+    display: block;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+}
+
+.btn-explorer {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 1px solid #d4af37;
+    color: #d4af37 !important;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* ==========================================================================
+   6. GASTRONOMIE (ALIGNÉ SUR UNE SEULE LIGNE)
+   ========================================================================== */
+.gastronomie-section {
+    padding: 100px 5%;
+    background-color: #0a0a0a;
+    text-align: center;
+    width: 100%;
+}
+
+.gastronomie-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: #d4af37;
+}
+
+.gastro-grid {
+    display: flex;
+    flex-direction: row; /* Force l'alignement horizontal */
+    justify-content: center;
+    align-items: stretch; /* Les cartes auront la même hauteur */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: nowrap; /* Empêche le passage à la ligne */
+}
+
+.gastro-card {
+    flex: 1; /* Chaque carte prend une part égale de la ligne */
+    min-width: 300px; /* Taille minimum pour garder la lisibilité */
+    background: #1a1a1a;
+    padding: 30px 20px;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: 0.4s ease;
+}
+
+.gastro-card:hover {
+    transform: translateY(-10px);
+    border-color: #d4af37;
+}
+
+.gastro-img {
+    width: 180px; 
+    height: 180px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #d4af37;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gastro-card:hover .gastro-img {
+    transform: rotate(15deg) scale(1.05);
+}
+
+.gastro-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.gastro-card h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   7. CONTACT
+   ========================================================================== */
+.contact-simple {
+    padding: 100px 5%;
+    background-color: #0f0f0f;
+    text-align: center;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 15px 50px;
+    background: linear-gradient(135deg, #d4af37 0%, #f9e29c 100%);
+    color: #000 !important;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 800;
+}
+
+/* ==========================================================================
+   FIX RESPONSIVE (Passage en colonne uniquement sur mobile)
+   ========================================================================== */
+@media (max-width: 900px) {
+    .gastro-grid {
+        flex-wrap: wrap; /* Permet de revenir en colonne sur petit écran */
+    }
+    .gastro-card {
+        flex: 0 1 100%;
+    }
+    .regions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
